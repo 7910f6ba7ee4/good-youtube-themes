@@ -1,0 +1,515 @@
+@-moz-document url-prefix("https://www.youtube.com/") {
+/*  
+
+AUTHOR:        910f6ba7ee4
+
+NAME:             good-youtube-dark 
+
+SOURCE:        github.com/7910f6ba7ee4/good-youtube-dark
+
+LICENSE:        GNU GENERAL PUBLIC LICENSE
+                         Version 3, 29 June 2007
+
+
+*/
+
+/* colors */
+:root {
+    --blue-day: #306AF2;
+    --blue-night: #4789e5;
+    --red-day: #F8333C;
+    --red-night: #ee353e;
+    --green-day: #28B75C;
+    --green-night: #366eb2;  /* 20944B
+    /* light */
+    --day-darker: #7d7d7d;
+    --day-dark: #B7B7B7;
+    --day-light: #DDDDDD;
+    --day-lighter: #EAEAEA;
+    --day-lightest: #FFFFFF;
+    /* dark */
+    --night-darkest: #1C1F28;
+    --night-darker: #292e36;
+    --night-dark: #333949;
+    --night-light: #6B7699;
+    --night-light-2: #6B7699;
+    --night-lighter: #9CA2B7;
+    
+--yt-live-chat-monetization-button-glow: #000
+}
+/* vars */
+/* html[dark]:not([style-scope]):not(.style-scope), [dark]:not([style-scope]):not(.style-scope)  */ 
+html:not([style-scope]):not(.style-scope) {
+    --watched-bg-color: rgba(0, 0, 0, .65);
+    --masterhead-shadow: 0 5px 12px 5px rgba(36, 36, 36, .07), 0 0 0px rgba(0, 0, 0, 0.25);
+    --yt-spec-brand-background-primary: var(--night-darker) !important;
+    --yt-main-app-background: var(--night-darkest);
+    --yt-app-background: var(--night-darkest);
+    --yt-main-app-background-tmp: var(--night-darkest);
+    --yt-spec-general-background-b: var(--night-darkest);
+    --yt-spec-general-background-a: var(--night-darkest);
+    --yt-sidebar-background: var(--night-darkest);
+    --yt-guide-background: var(--night-darkest);
+    --yt-dialog-background: var(--night-darkest);
+    --yt-live-chat-background-color: var(--night-darkest);
+    --paper-listbox-background-color: var(--night-darkest);
+    --yt-spec-brand-background-solid: var(--night-darkest);
+    --darker-bg-color: var(--night-darkest);
+    --yt-live-chat-vem-background-color: var(--night-darker);
+    --yt-std-surface-300: var(--night-darker);
+    --yt-simple-menu-header-background: var(--night-darker);
+    --yt-featured-channel-title-text-color: var(--night-lighter);
+    --ytd-metadata-line-color: var(--night-lighter);
+    --yt-spec-text-disabled: var(--night-lighter);
+    --yt-spec-text-primary: var(--night-lighter);
+    --video-title-text-color: var(--day-lightest);
+    --yt-expand-color: var(--night-lighter);
+    --link-text-color: var(--night-lighter);
+    --yt-spec-text-secondary: var(--night-lighter);
+    --ytd-badge-icon-color: var(--night-lighter);
+    --ytd-owner-badge-color: var(--night-lighter);
+    --yt-spec-call-to-action: var(--night-lighter);
+    --badge-bg: var(--red-night);
+    --badge-color: var(--day-lighter);
+    --comment-op-bg-color: var(--night-dark);
+    --iron-icon-fill-color: var(--night-lighter);
+    --comment-op-check-color: var(--day-lightest);
+    --yt-button-color: var(--night-lighter);
+    --yt-spec-brand-button-background: var(--red-night);
+    --searchbox-focus-color: var(--red-night);
+    --searchresults-bg-color: var(--night-darker);
+    --searchresults-text-color: var(--night-lighter);
+    --searchresults-text-bg-hovered: var(--night-dark);
+    --searchbox-placeholder-color: var(--night-lighter);
+    --searchresults-searched-text-color: var(--blue-night);
+    --paper-toggle-button-checked-button-color: var(--blue-night);
+    --scrollbar-background: var(--night-darkest);
+    --scrollbar-color: var(--night-dark);
+    --scrollbar-hover: var(--night-light);
+    --scrollbar-active: var(--night-lighter);
+    --sidepanel-menu-active: var(--night-dark);
+    --sidepanel-menu-active-color: var(--night-lighter);
+    --yt-spec-10-percent-layer: var(--night-dark);
+    --yt-spec-icon-disabled: var(--night-dark);
+    --yt-spec-icon-inactive: var(--night-lighter);
+    --skeleton-bg-color: var(--night-darker);
+    --paper-toggle-button-unchecked-bar: var(--night-dark);
+    --paper-toggle-button-unchecked-bar-color: var(--paper-toggle-button-unchecked-bar);
+    --url-color: var(--blue-night);
+    --yt-button-border-radius: 4px !important;
+    --yt-spec-badge-chip-background: var(--night-darker);
+    --yt-menu-hover-backgound-color: var(--yt-spec-badge-chip-background);
+    --like-dislike-color: var(--blue-night);
+    --dislike-color: var(--red-night);
+    --like-color: var(--green-night);
+}
+
+/* fonts */
+@font-face {
+    font-family: Google Sans;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/googlesans/v14/4UaGrENHsxJlGDuGo1OIlL3Owp4.woff2);
+}
+
+@font-face {
+    font-family: Google Sans;
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/googlesans/v14/4UabrENHsxJlGDuGo1OIlLU94YtzCwY.woff2);
+}
+
+/* css */
+body, html, #search-input.ytd-searchbox-spt input {
+    font-family: 'Google Sans', Roboto, sans-serif;
+    font-weight: 400;
+}
+
+b {
+    font-family: 'Google Sans', Roboto, sans-serif !important;
+    font-weight: 500 !important;
+}
+
+yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpoint.yt-formatted-string, #description-text.ytd-video-renderer, .content.ytd-channel-video-player-renderer, .deemphasize.yt-formatted-string, #caption.ytd-toggle-item-renderer, #label.ytd-pinned-comment-badge-renderer, .more-button-exp.ytd-comment-renderer, .less-button-exp.ytd-comment-renderer{
+    color: var(--link-text-color) !important;
+}
+
+#button.ytd-button-renderer yt-icon.ytd-button-renderer + yt-formatted-string.ytd-button-renderer {
+    color: var(--blue-night) !important;
+}
+
+yt-icon.ytd-pinned-comment-badge-renderer {
+    fill: var(--link-text-color) !important;
+}
+
+#tabs-inner-container.ytd-c4-tabbed-header-renderer, #channel-header.ytd-c4-tabbed-header-renderer, #container #section, ytd-multi-page-menu-renderer{
+    background: var(--darker-bg-color) !important;
+}
+
+#sections.ytd-multi-page-menu-renderer > ytd-background-promo-renderer.ytd-multi-page-menu-renderer {
+    background: var(--darker-bg-color);
+    margin-bottom: 0;
+}
+
+paper-button.ytd-subscribe-button-renderer .deemphasize.yt-formatted-string {
+    color: white !important;
+}
+
+paper-button.ytd-subscribe-button-renderer[subscribed] .deemphasize.yt-formatted-string {
+    color: var(--yt-spec-text-secondary) !important;
+}
+
+#video-title.yt-simple-endpoint.ytd-grid-video-renderer, h3.ytd-compact-video-renderer, ytd-compact-radio-renderer.use-ellipsis #video-title.ytd-compact-radio-renderer, #video-title.ytd-playlist-panel-video-renderer, .title.ytd-video-primary-info-renderer {
+    color: var(--video-title-text-color) !important;
+}
+
+ytd-live-chat-frame#chat, #search-icon-legacy.ytd-searchbox:hover {
+    border: none;
+    box-shadow: none;
+}
+
+ytd-author-comment-badge-renderer, ytd-button-renderer.style-primary[is-paper-button] {
+    background: var(--comment-op-bg-color) !important;
+}
+
+ytd-author-comment-badge-renderer yt-icon {
+    fill: var(--comment-op-check-color);
+}
+
+ytd-guide-entry-renderer[active] {
+    background-color: var(--sidepanel-menu-active);
+    border-radius: 0 25px 25px 0;
+}
+
+
+
+ytd-guide-entry-renderer[active] .guide-icon.ytd-guide-entry-renderer, ytd-guide-entry-renderer[active] .title.ytd-guide-entry-renderer {
+    fill: var(--sidepanel-menu-active-color);
+    color: var(--sidepanel-menu-active-color);
+}
+
+app-toolbar.ytd-c4-tabbed-header-renderer {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 0 0px rgba(0, 0, 0, 0.25);
+}
+
+ytd-sentiment-bar-renderer[activated_] #like-bar.ytd-sentiment-bar-renderer {
+    background: var(--blue-day);
+}
+
+#home-page-skeleton .skeleton-bg-color, .masthead-skeleton-icon, .watch-skeleton .skeleton-bg-color, html[dark] #home-page-skeleton .skeleton-bg-color, html[dark] .masthead-skeleton-icon, html[dark] .watch-skeleton .skeleton-bg-color {
+    background-color: var(--skeleton-bg-color) !important;
+}
+
+paper-toggle-button[checked]:not([disabled]) .toggle-bar.paper-toggle-button, .sbsb_d {
+    background-color: var(--paper-toggle-button-unchecked-bar) !important;
+}
+
+#expander yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpoint.yt-formatted-string, #description a.yt-simple-endpoint.yt-formatted-string, #expander a.yt-simple-endpoint.yt-formatted-string {
+    color: var(--url-color) !important;
+}
+
+#container.ytd-sentiment-bar-renderer {
+    background-color: var(--dislike-color) !important;
+}
+
+ytd-sentiment-bar-renderer[activated_] #like-bar.ytd-sentiment-bar-renderer, #like-bar.ytd-sentiment-bar-renderer {
+    background: var(--like-color);
+}
+
+ytd-toggle-button-renderer.style-default-active[is-icon-button]:first-child, ytd-toggle-button-renderer.style-default-active[is-icon-button]:nth-child(3) {
+    --yt-spec-call-to-action: var(--like-color)!important;
+    --iron-icon-fill-color: var(--like-color) !important;
+}
+
+ytd-toggle-button-renderer.style-default-active[is-icon-button]:nth-child(2), ytd-toggle-button-renderer.style-default-active[is-icon-button]:nth-child(5) {
+    --yt-spec-call-to-action: var(--dislike-color)!important;
+    --iron-icon-fill-color: var(--dislike-color) !important;
+}    
+  
+
+/* search */
+#search-icon-legacy.ytd-searchbox, #container.ytd-searchbox {
+    border: none;
+    background: transparent !important;
+}
+
+#container.ytd-searchbox input.ytd-searchbox::placeholder, input#search::placeholder {
+    color: var(--searchbox-placeholder-color);
+}
+
+ytd-searchbox[has-focus] #container.ytd-searchbox {
+    border: none;
+    border-bottom: var(--searchbox-focus-color) solid 1px;
+    box-shadow: none;
+    transition: border-bottom 350ms ease-in-out;
+    -webkit-transition: border-bottom 350ms ease-in-out;
+    -o-transition: border-bottom 350ms ease-in-out;
+}
+
+#container.ytd-searchbox {
+    box-shadow: none !important;
+}
+
+/* search results */
+.sbdd_b, .sbsb_a, .sbfl_b {
+    background: var(--searchresults-bg-color);
+    border: none;
+}
+
+.gsfs, .sbfl_a {
+    color: var(--searchresults-text-color);
+}
+
+.sbsb_d {
+    background: var(--searchresults-text-bg-color-hovered);
+}
+
+.sbpqs_a {
+    color: var(--searchresults-searched-text-color);
+}
+
+.sbdd_a {
+    top: 50px !important;
+    z-index: 9999 !important;
+}
+
+.sbdd_b {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 0 0px rgba(0, 0, 0, 0.25);
+}
+
+/* "watched" */
+ytd-thumbnail-overlay-toggle-button-renderer, ytd-thumbnail-overlay-time-status-renderer[overlay-style=DEFAULT] {
+    z-index: 2;
+}
+
+ytd-thumbnail-overlay-resume-playback-renderer, #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+    background-color: var(--watched-bg-color);
+    height: 100%;
+    width: 100%;
+}
+
+#progress.ytd-thumbnail-overlay-resume-playback-renderer:after {
+    content: 'WATCHED';
+    left: 0;
+    top: 0;
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+            align-items: center;
+    font-size: 1.35rem;
+    letter-spacing: 0.035rem;
+    height: 21px;
+    margin: 4px;
+    padding: 0 3px;
+    border-radius: 3px;
+    opacity: .8;
+    color: #fff;
+    background: #121212
+}
+
+ytd-thumbnail:hover ytd-thumbnail-overlay-resume-playback-renderer, #progress.ytd-thumbnail-overlay-resume-playback-renderer {
+    height: 0
+}
+
+yt-formatted-string.ytd-thumbnail-overlay-playback-status-renderer {
+    display: none;
+}
+  
+/* badges */
+.badge-style-type-simple.ytd-badge-supported-renderer, .badge-style-type-live-now.ytd-badge-supported-renderer, .badge-style-type-red.ytd-badge-supported-renderer, #privacy-stats yt-icon.ytd-badge-supported-renderer {
+    background: var(--badge-bg);
+    color: var(--badge-color);
+    fill: var(--badge-color);
+    border: none;
+}
+
+/* frosted */
+ytd-thumbnail-overlay-side-panel-renderer {
+    --blur: 10px;
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+}
+
+/* scroll */
+html[hide-scrollbar="true"] ::-webkit-scrollbar, ::-webkit-scrollbar-corner {
+    display: none;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-corner {
+    background: var(--scrollbar-background);
+    width: 10px;
+    height: 10px;
+}
+
+#guide-inner-content.ytd-app::-webkit-scrollbar,
+#guide-inner-content.ytd-app::-webkit-scrollbar-corner {
+    background: var(--scrollbar-background);
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-button, #guide-inner-content.ytd-app::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb, #guide-inner-content.ytd-app::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb:not(:active):hover, #guide-inner-content.ytd-app::-webkit-scrollbar-thumb:not(:active):hover {
+    background: var(--scrollbar-hover);
+}
+
+::-webkit-scrollbar-thumb:active, ::-webkit-scrollbar-thumb:hover:active, #guide-inner-content.ytd-app::-webkit-scrollbar-thumb:active, #guide-inner-content.ytd-app::-webkit-scrollbar-thumb:hover:active {
+    background: var(--scrollbar-active);
+}
+/* custom */
+
+#container.ytd-masthead {
+    background-color: #000;
+}
+
+#logo-icon-container.ytd-topbar-logo-renderer #youtube-paths.ytd-topbar-logo-renderer path.ytd-topbar-logo-renderer {
+    fill: #fff;
+}
+
+ytd-mini-guide-entry-renderer[active] .title.ytd-mini-guide-entry-renderer {
+    color: var(--night-lighter);
+}
+
+#container.ytd-searchbox input.ytd-searchbox {
+    color: #fff;
+}
+
+#message.yt-live-chat-text-message-renderer {
+    color: var(--night-lighter);
+}
+
+#author-name.yt-live-chat-author-chip {
+    color: #b0b0b0;
+}
+
+.yt-simple-endpoint {
+    color: var(--blue-night);
+}
+
+#message.yt-live-chat-server-error-message, #search-empty.yt-emoji-picker-renderer, .yt-live-chat-message-renderer, .yt-live-chat-renderer, .yt-live-chat-text-input-field-renderer, #label-text.yt-dropdown-menu, #count.yt-live-chat-message-input-renderer, #message.yt-live-chat-viewer-engagement-message-renderer, #label.yt-live-chat-text-input-field-renderer {
+    color: var(--night-lighter);
+}
+
+yt-live-chat-banner-manager[has-visible-banner], yt-live-chat-banner-manager#live-chat-banner.style-scope.yt-live-chat-item-list-renderer {
+    background: linear-gradient(rgba(40, 40, 40, 0.95), transparent);
+}
+
+#search-panel.yt-emoji-picker-renderer, .input-content.paper-input-container, iron-input#input-1, .input-content.paper-input-container > label, .input-content.paper-input-container > .paper-input-label {
+    background: #676767;
+    color: #fff;
+}
+
+yt-emoji-picker-renderer {
+    --paper-input-container-color: #fff;   
+}
+
+#categories.yt-emoji-picker-renderer, #search-category.yt-emoji-picker-renderer, html body yt-live-chat-app div#contents.style-scope.yt-live-chat-app yt-live-chat-renderer.style-scope.yt-live-chat-app iron-pages#content-pages.style-scope.yt-live-chat-renderer div#chat-messages.style-scope.yt-live-chat-renderer.iron-selected div#contents.style-scope.yt-live-chat-renderer iron-pages#panel-pages.style-scope.yt-live-chat-renderer div#input-panel.style-scope.yt-live-chat-renderer.iron-selected yt-live-chat-message-input-renderer.style-scope.yt-live-chat-renderer div#container.style-scope.yt-live-chat-message-input-renderer iron-pages#pickers.style-scope.yt-live-chat-message-input-renderer yt-emoji-picker-renderer#emoji.style-scope.yt-live-chat-message-input-renderer.iron-selected div#categories-wrapper.style-scope.yt-emoji-picker-renderer div#categories.style-scope.yt-emoji-picker-renderer yt-emoji-picker-category-renderer.style-scope.yt-emoji-picker-renderer {
+    color: var(--night-dark);
+    background: #fff;
+}
+
+.item.yt-dropdown-menu {
+    color: var(--night-lighter);
+}
+
+html[dark] ytd-video-secondary-info-renderer, ytd-video-secondary-info-renderer {
+    background-color: var(--night-darkest);
+}
+
+ytd-sentiment-bar-renderer[activated] #like-bar.ytd-sentiment-bar-renderer {
+    background: var(--green-night);
+}
+
+/* upper subject bar on home feed */
+
+#chips-wrapper.ytd-feed-filter-chip-bar-renderer {
+    background-color: var(--night-darkest);
+    border: none;
+}
+
+#left-arrow-button.ytd-feed-filter-chip-bar-renderer, #right-arrow-button.ytd-feed-filter-chip-bar-renderer {
+    background-color: var(--night-darkest);
+}
+
+#right-arrow.ytd-feed-filter-chip-bar-renderer::before {
+    background: linear-gradient(to left, var(--night-darkest) 20%, rgba(255, 255, 255, 0) 80%)
+}
+
+#left-arrow.ytd-feed-filter-chip-bar-renderer::after {
+    background: linear-gradient(to right, var(--night-darkest) 20%, rgba(255, 255, 255, 0) 80%);
+}
+
+yt-chip-cloud-chip-renderer[chip-style="STYLE_DEFAULT"], yt-chip-cloud-chip-renderer[chip-style="STYLE_HOME_FILTER"], yt-chip-cloud-chip-renderer[chip-style="STYLE_REFRESH_TO_NOVEL_CHIP"] {
+    background-color: var(--night-dark);
+}
+
+/* block stuff */
+
+.ytp-doubletap-ui-legacy {
+    opacity: 0;
+}
+
+
+/* livechat */
+
+#timestamp.yt-live-chat-text-message-renderer {
+    color: var(--day-light) !important;
+}
+
+/* yt posts */
+#show-more-button.ytd-rich-shelf-renderer:hover {
+    background-color: var(--night-dark);
+}
+
+ytd-rich-shelf-renderer, #show-more-button.ytd-rich-shelf-renderer {
+    border: none;
+}
+
+/* video page */
+ytd-sentiment-bar-renderer[activated_] #like-bar.ytd-sentiment-bar-renderer, #like-bar.ytd-sentiment-bar-renderer, ytd-sentiment-bar-renderer[activated][system-icons] #like-bar.ytd-sentiment-bar-renderer {
+    background-color: var(--blue-night);
+}
+
+tp-yt-paper-button.ytd-subscribe-button-renderer[subscribed] {
+    background-color: var(--night-dark)
+}
+
+yt-icon#hearted {
+    fill: var(--red-night);
+}
+
+yt-icon#hearted-border {
+    fill: transparent;
+}
+
+/* live chat */
+yt-live-chat-header-renderer, yt-live-chat-ticker-renderer {
+    background-color:transparent;
+}
+
+yt-live-chat-banner-manager[has-visible-banner], yt-live-chat-banner-manager#live-chat-banner.style-scope.yt-live-chat-item-list-renderer, #show-hide-button.ytd-live-chat-frame > ytd-toggle-button-renderer.ytd-live-chat-frame{
+    background: transparent;
+}
+
+tp-yt-paper-listbox, tp-yt-paper-listbox.yt-dropdown-menu {
+    background-color: var(--night-darker);
+}
+
+#right-arrow-container.yt-live-chat-ticker-renderer {
+    background: linear-gradient(to left, var(--night-darkest) 0, var(--night-darkest) 52px, transparent 60px);
+}
+
+
+}
