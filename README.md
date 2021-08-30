@@ -1,4 +1,4 @@
-# good-youtube-dark
+# good-youtube-themes
 Alternate CSS overlay for YouTube
 
 ## Prerequisites
